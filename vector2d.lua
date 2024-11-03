@@ -69,6 +69,16 @@ function M.multiply(vector, scalar)
     return {x = vector.x * scalar, y = vector.y * scalar}
 end
 
+-- Divides a vector by a scalar value.
+--
+-- @param `vector`: The vector to divide, represented as a table with `x` and `y` keys.
+-- @param `scalar`: The scalar value to divide the vector by.
+--
+-- @return A new vector representing the quotient of the original vector divided by the scalar.
+function M.divide(vector, scalar)
+    return {x = vector.x / scalar, y = vector.y / scalar}
+end
+
 
 
 return M
