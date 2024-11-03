@@ -59,6 +59,16 @@ function M.subtract(vector1, vector2)
     return {x = vector1.x - vector2.x, y = vector1.y - vector2.y}
 end
 
+-- Multiplies a vector by a scalar value.
+--
+-- @param `vector`: The vector to multiply, represented as a table with `x` and `y` keys.
+-- @param `scalar`: The scalar value to multiply the vector by.
+--
+-- @return A new vector representing the product of the original vector and the scalar.
+function M.multiply(vector, scalar)
+    return {x = vector.x * scalar, y = vector.y * scalar}
+end
+
 
 
 return M
