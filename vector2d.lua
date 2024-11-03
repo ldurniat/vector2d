@@ -39,4 +39,15 @@ function M.new(x, y)
 	return {x: x, y:y}
 end
 
+-- Adds two vectors.
+--
+-- @param `vector1`: The first vector, represented as a table with `x` and `y` keys.
+-- @param `vector2`: The second vector, represented as a table with `x` and `y` keys.
+--
+-- @return A new vector representing the sum of `vector1` and `vector2`.
+function M.add(vector1, vector2)
+    return {x = vector1.x + vector2.x, y = vector1.y + vector2.y}
+end
+
+
 return M
