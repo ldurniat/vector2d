@@ -49,5 +49,16 @@ function M.add(vector1, vector2)
     return {x = vector1.x + vector2.x, y = vector1.y + vector2.y}
 end
 
+-- Subtracts the second vector from the first.
+--
+-- @param `vector1`: The vector to subtract from, represented as a table with `x` and `y` keys.
+-- @param `vector2`: The vector to subtract, represented as a table with `x` and `y` keys.
+--
+-- @return A new vector representing the difference between `vector1` and `vector2`.
+function M.subtract(vector1, vector2)
+    return {x = vector1.x - vector2.x, y = vector1.y - vector2.y}
+end
+
+
 
 return M
