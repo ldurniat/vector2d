@@ -90,6 +90,19 @@ function M.magnitude(vector)
     return sqrt(vector.x * vector.x + vector.y * vector.y)
 end
 
+-- Normalizes a vector to a unit vector (magnitude of 1).
+--
+-- @param `vector`: The vector to normalize, represented as a table with `x` and `y` keys.
+--
+-- @return A normalized vector with the same direction as the original vector. If the vector is zero-length, it returns the original vector.
+function M.normalize(vector)
+    local mag = M.magnitude(vector)
+    if mag == 0 then
+        return vector  -- Return the original vector if its magnitude is 0.
+    else
+        return {x = vector.x / mag, y = vector.y / mag}
+    end
+end
 
 
 return M
