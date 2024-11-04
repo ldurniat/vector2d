@@ -22,6 +22,8 @@ local M = {}
 -- ------------------------------------------------------------------------------------------ --
 
 local sqrt = math.sqrt
+local cos  = math.cos
+local sin  = math.sin
 
 -- ------------------------------------------------------------------------------------------ --
 --                                 PRIVATE METHODS                                            --	
@@ -102,6 +104,16 @@ function M.normalize(vector)
     else
         return {x = vector.x / mag, y = vector.y / mag}
     end
+end
+
+-- Converts an angle (in degrees) to a unit vector in the Cartesian coordinate system.
+--
+-- @param `angle`: The angle in degrees to convert to a unit vector.
+--
+-- @return A new unit vector represented as a table with `x` and `y` keys.
+function M.fromAngle(angle)
+    local radians = angle * (math.pi / 180)  -- Convert degrees to radians
+    return {x = cos(radians), y = sin(radians)}
 end
 
 
