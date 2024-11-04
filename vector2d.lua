@@ -21,6 +21,8 @@ local M = {}
 --                                 LOCALISED VARIABLES                                        --	
 -- ------------------------------------------------------------------------------------------ --
 
+local sqrt = math.sqrt
+
 -- ------------------------------------------------------------------------------------------ --
 --                                 PRIVATE METHODS                                            --	
 -- ------------------------------------------------------------------------------------------ --
@@ -77,6 +79,15 @@ end
 -- @return A new vector representing the quotient of the original vector divided by the scalar.
 function M.divide(vector, scalar)
     return {x = vector.x / scalar, y = vector.y / scalar}
+end
+
+-- Calculates the magnitude of a vector.
+--
+-- @param `vector`: The vector whose magnitude is to be calculated, represented as a table with `x` and `y` keys.
+--
+-- @return A floating-point number representing the magnitude of the vector.
+function M.magnitude(vector)
+    return sqrt(vector.x * vector.x + vector.y * vector.y)
 end
 
 
