@@ -39,7 +39,6 @@ function M.new(x, y)
 	-- Set default values 
 	x = x or 0
 	y = y or 0
-	
 	return {x = x, y = y}
 end
 
