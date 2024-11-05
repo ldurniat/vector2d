@@ -116,5 +116,16 @@ function M.fromAngle(angle)
     return {x = cos(radians), y = sin(radians)}
 end
 
+--- Calculates the distance between two vectors in the Cartesian coordinate system.
+-- 
+-- @param `vectorA`: The first vector, represented as a table with `x` and `y` keys.
+-- @param `vectorB`: The second vector, represented as a table with `x` and `y` keys.
+--
+-- @return The distance between `vectorA` and `vectorB` as a number.
+function M.distance(vectorA, vectorB)
+    local dx = vectorB.x - vectorA.x
+    local dy = vectorB.y - vectorA.y
+    return sqrt(dx * dx + dy * dy)
+end
 
 return M
