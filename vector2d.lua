@@ -127,4 +127,14 @@ function M.distance(vectorA, vectorB)
     return sqrt(dx * dx + dy * dy)
 end
 
+-- Calculates the dot product of two vectors.
+--
+-- @param `vectorA`: The first vector, represented as a table with `x` and `y` keys.
+-- @param `vectorB`: The second vector, represented as a table with `x` and `y` keys.
+--
+-- @return A number representing the dot product of `vectorA` and `vectorB`.
+function M.dot(vectorA, vectorB)
+    return vectorA.x * vectorB.x + vectorA.y * vectorB.y
+end
+
 return M
