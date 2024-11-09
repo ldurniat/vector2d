@@ -137,4 +137,15 @@ function M.dot(vectorA, vectorB)
     return vectorA.x * vectorB.x + vectorA.y * vectorB.y
 end
 
+-- Negates a vector, reversing its direction in place.
+--
+-- @param `vector`: The vector to negate, represented as a table with `x` and `y` keys.
+--
+-- @return The original vector with both `x` and `y` components negated.
+function M.negate(vector)
+    vector.x = -vector.x
+    vector.y = -vector.y
+    return vector
+end
+
 return M
