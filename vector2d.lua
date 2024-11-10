@@ -148,4 +148,21 @@ function M.negate(vector)
     return vector
 end
 
+-- Rotates a vector by a given angle and returns a new vector.
+--
+-- @param `vector`: The vector to rotate, represented as a table with `x` and `y` keys.
+-- @param `angle`: The angle in degrees by which to rotate the vector.
+--
+-- @return A new vector with `x` and `y` components representing the rotated vector.
+function M.rotate(vector, angle)
+    local radians = math.rad(angle)
+    local cosAngle = cos(radians)
+    local sinAngle = sin(radians)
+
+    local rotatedX = vector.x * cosAngle - vector.y * sinAngle
+    local rotatedY = vector.x * sinAngle + vector.y * cosAngle
+
+    return {x = rotatedX, y = rotatedY}
+end
+
 return M
