@@ -24,6 +24,7 @@ local M = {}
 local sqrt = math.sqrt
 local cos  = math.cos
 local sin  = math.sin
+local rad  = math.rad
 
 -- ------------------------------------------------------------------------------------------ --
 --                                 PRIVATE METHODS                                            --	
@@ -155,7 +156,7 @@ end
 --
 -- @return A new vector with `x` and `y` components representing the rotated vector.
 function M.rotate(vector, angle)
-    local radians = math.rad(angle)
+    local radians  = rad(angle)
     local cosAngle = cos(radians)
     local sinAngle = sin(radians)
 
