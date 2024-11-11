@@ -21,10 +21,12 @@ local M = {}
 --                                 LOCALISED VARIABLES                                        --	
 -- ------------------------------------------------------------------------------------------ --
 
-local sqrt = math.sqrt
-local cos  = math.cos
-local sin  = math.sin
-local rad  = math.rad
+local sqrt  = math.sqrt
+local cos   = math.cos
+local sin   = math.sin
+local rad   = math.rad
+local atan2 = math.atan2
+local deg   = math.deg
 
 -- ------------------------------------------------------------------------------------------ --
 --                                 PRIVATE METHODS                                            --	
@@ -164,6 +166,15 @@ function M.rotate(vector, angle)
     local rotatedY = vector.x * sinAngle + vector.y * cosAngle
 
     return {x = rotatedX, y = rotatedY}
+end
+
+-- Calculates the angle of the vector relative to the X-axis in the Cartesian coordinate system.
+--
+-- @param `vector`: The vector for which to calculate the angle, represented as a table with `x` and `y` keys.
+--
+-- @return The angle in degrees between the vector and the positive X-axis.
+function M.angle(vector)
+    return deg(atan2(vector.y, vector.x))
 end
 
 return M
