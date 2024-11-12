@@ -27,6 +27,7 @@ local sin   = math.sin
 local rad   = math.rad
 local atan2 = math.atan2
 local deg   = math.deg
+local rand  = math.random
 
 -- ------------------------------------------------------------------------------------------ --
 --                                 PRIVATE METHODS                                            --	
@@ -176,5 +177,26 @@ end
 function M.angle(vector)
     return deg(atan2(vector.y, vector.x))
 end
+
+-- Generates a random vector within a specified range.
+--
+-- @param `minX`: The minimum value for the x-component.
+-- @param `maxX`: The maximum value for the x-component.
+-- @param `minY`: The minimum value for the y-component.
+-- @param `maxY`: The maximum value for the y-component.
+--
+-- @return A new vector with `x` and `y` components set to random values within the specified range.
+function M.random(minX, maxX, minY, maxY)
+    minX = minX or 0
+    maxX = maxX or 1
+    minY = minY or 0
+    maxY = maxY or 1
+    
+    local x = rand() * (maxX - minX) + minX
+    local y = rand() * (maxY - minY) + minY
+    
+    return {x = x, y = y}
+end
+
 
 return M
